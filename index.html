@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Personal de Salud</title>
+    <style>
+        /* Estilos Generales - Aspecto Limpio e Institucional */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #00796b; /* Verde institucional médica */
+            color: white;
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+
+        header h1 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        /* Sistema de Pestañas (Navegación) */
+        nav {
+            background-color: #004d40;
+            display: flex;
+            justify-content: center;
+            sticky: top;
+        }
+
+        nav button {
+            background-none: none;
+            background: transparent;
+            border: none;
+            color: #b2dfdb;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+
+        nav button:hover, nav button.active {
+            color: white;
+            background-color: #00796b;
+        }
+
+        /* Contenedor de Secciones */
+        .container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .tab-content {
+            display: none; /* Esconde las secciones por defecto */
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+        }
+
+        .tab-content.active {
+            display: block; /* Muestra solo la sección activa */
+        }
+
+        /* Diseño del Catálogo de Fotos (Grid Responsivo) */
+        .grid-personal {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .tarjeta-personal {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            transition: transform 0.2s;
+        }
+
+        .tarjeta-personal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .tarjeta-personal img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover; /* Evita que la foto se deforme */
+            background-color: #eaeff1;
+        }
+
+        .info-personal {
+            padding: 1rem;
+        }
+
+        .info-personal h3 {
+            font-size: 1.1rem;
+            color: #004d40;
+            margin-bottom: 0.2rem;
+        }
+
+        .info-personal .cargo {
+            font-size: 0.9rem;
+            color: #00796b;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .info-personal .detalle {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Estilos de listas de información */
+        ul {
+            list-style-position: inside;
+            margin-top: 1rem;
+            padding-left: 1rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sistema de Información de Personal</h1>
+        <p>Directorio Institucional y Catálogo Visual</p>
+    </header>
+
+    <!-- Barra de Navegación (Pestañas) -->
+    <nav>
+        <button class="tab-btn active" onclick="openTab(event, 'inicio')">Inicio</button>
+        <button class="tab-btn" onclick="openTab(event, 'informacion')">Información General</button>
+        <button class="tab-btn" onclick="openTab(event, 'catalogo')">Catálogo de Personal</button>
+    </nav>
+
+    <div class="container">
+        
+        <!-- PESTAÑA 1: INICIO -->
+        <div id="inicio" class="tab-content active">
+            <h2>Bienvenidos al Portal de Personal</h2>
+            <p style="margin-top: 1rem;">Esta plataforma ha sido diseñada para centralizar y visualizar de manera práctica la información de nuestro equipo humano de salud. Utilice las pestañas superiores para navegar por las distintas secciones.</p>
+        </div>
+
+        <!-- PESTAÑA 2: INFORMACIÓN -->
+        <div id="informacion" class="tab-content">
+            <h2>Información Institucional</h2>
+            <p style="margin-top: 1rem;">Detalles sobre la organización y los objetivos del equipo de trabajo:</p>
+            <ul>
+                <li><strong>Objetivo:</strong> Facilitar la identificación visual y el rol de cada miembro del establecimiento.</li>
+                <li><strong>Actualización:</strong> Los datos se refrescan periódicamente conforme se incorporan nuevos profesionales.</li>
+                <li><strong>Áreas Técnicas:</strong> Base de datos, digitación, asistencia médica, enfermería y soporte administrativo.</li>
+            </ul>
+        </div>
+
+        <!-- PESTAÑA 3: CATÁLOGO DE FOTOS -->
+        <div id="catalogo" class="tab-content">
+            <h2>Catálogo Visual del Personal</h2>
+            <p>Listado oficial con nombres, cargos y especialidades.</p>
+            
+            <div class="grid-personal">
+                
+                <!-- Miembro 1 -->
+                <div class="tarjeta-personal">
+                    <!-- Aquí pones la ruta o enlace de la foto -->
+                    <img src="https://via.placeholder.com/220x220" alt="Foto de Personal"> 
+                    <div class="info-personal">
+                        <h3>Juan Pérez Gómez</h3>
+                        <p class="cargo">Médico General</p>
+                        <p class="detalle">Área de Consultorios Externos</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 2 -->
+                <div class="tarjeta-personal">
+                    <img src="https://via.placeholder.com/220x220" alt="Foto de Personal">
+                    <div class="info-personal">
+                        <h3>Ana Torres Solís</h3>
+                        <p class="cargo">Lic. en Enfermería</p>
+                        <p class="detalle">Servicio de Inmunizaciones</p>
+                    </div>
+                </div>
+
+                <!-- Miembro 3 -->
+                <div class="tarjeta-personal">
+                    <img src="https://via.placeholder.com/220x220" alt="Foto de Personal">
+                    <div class="info-personal">
+                        <h3>Carlos Mendoza R.</h3>
+                        <p class="cargo">Digitador de Sistemas</p>
+                        <p class="detalle">Oficina de Estadística e Informática</p>
+                    </div>
+                </div>
+
+                <!-- Puedes copiar y pegar más bloques de "tarjeta-personal" para añadir más gente -->
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Script en JavaScript para alternar entre pestañas sin recargar la página -->
+    <script>
+        function openTab(evt, tabName) {
+            // Esconder todas las secciones
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            // Quitar la clase "active" de todos los botones
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            // Mostrar la sección actual y añadir clase "active" al botón presionado
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
