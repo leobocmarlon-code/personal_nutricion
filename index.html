@@ -79,4 +79,269 @@
         .container {
             max-width: 1200px;
             margin: 2.5rem auto;
-            padding: 0 1
+            padding: 0 1.5rem;
+        }
+
+        .tab-content {
+            display: none; /* Esconde las secciones por defecto */
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(114, 28, 36, 0.05);
+            border: 1px solid #e8e2d5;
+        }
+
+        .tab-content.active {
+            display: block; /* Muestra solo la sección activa */
+        }
+
+        /* Diseño del Catálogo de Fotos (Grid Responsivo) */
+        .grid-personal {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .tarjeta-personal {
+            background: #fff;
+            border: 1px solid #e0dacb; /* Borde beige sutil */
+            border-radius: 10px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .tarjeta-personal:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(112, 28, 36, 0.15);
+            border-color: #721c24;
+        }
+
+        .tarjeta-personal img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            background-color: #f5f2eb;
+        }
+
+        .info-personal {
+            padding: 1.2rem;
+        }
+
+        .info-personal h3 {
+            font-size: 1.15rem;
+            color: #4a1016; /* Nombres en guinda oscuro */
+            margin-bottom: 0.3rem;
+        }
+
+        .info-personal .cargo {
+            font-size: 0.9rem;
+            color: #721c24; /* Cargo destacado en guinda principal */
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .info-personal .detalle {
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 0.5rem;
+        }
+
+        /* Tablas del Repositorio */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1.5rem;
+            text-align: left;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+
+        th {
+            background-color: #721c24; /* Encabezado de tabla guinda */
+            color: white;
+            padding: 14px;
+            font-weight: 600;
+            border: 1px solid #61161e;
+        }
+
+        td {
+            padding: 14px;
+            border-bottom: 1px solid #e0dacb;
+            color: #333;
+        }
+
+        .btn-descarga {
+            background-color: #721c24;
+            color: white;
+            padding: 8px 16px;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: bold;
+            font-size: 0.85rem;
+            transition: background 0.2s;
+            display: inline-block;
+        }
+
+        .btn-descarga:hover {
+            background-color: #4a1016; /* Más oscuro al pasar el cursor */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="logo.jpeg" alt="Logo Colegio Nutricionistas Ancash"> 
+        <div>
+            <h1>CRXIX - Colegio de Nutricionistas Áncash</h1>
+            <p style="font-size: 1.1rem; color: #e3c4c6; margin-top: 0.2rem;">Gremio Profesional Comprometido con la Salud y la Alimentación</p>
+        </div>
+    </header>
+
+    <nav>
+        <button class="tab-btn active" onclick="openTab(event, 'inicio')">Inicio</button>
+        <button class="tab-btn" onclick="openTab(event, 'informacion')">Información General</button>
+        <button class="tab-btn" onclick="openTab(event, 'catalogo')">Catálogo de Personal</button>
+        <button class="tab-btn" onclick="openTab(event, 'documentos')">Biblioteca Digital</button> 
+    </nav>
+
+    <div class="container">
+        
+        <div id="inicio" class="tab-content active">
+            <h2 style="color: #4a1016; border-bottom: 2px solid #721c24; padding-bottom: 0.5rem; margin-bottom: 1rem;">INTRODUCCIÓN</h2>
+            <p style="text-align: justify; color: #333; font-size: 1.05rem;">
+                El Consejo Regional XIX Áncash del Colegio de Nutricionistas del Perú, creado en el año 2024, representa un avance importante en el proceso de descentralización institucional y fortalecimiento del ejercicio profesional del nutricionista en la región Áncash. Su creación responde a la necesidad de contar con una representación regional organizada, participativa y cercana a los colegiados, capaz de impulsar acciones orientadas al fortalecimiento profesional, la defensa gremial y la promoción de la salud y nutrición de la población.
+            </p>
+            <p style="text-align: justify; color: #333; font-size: 1.05rem; margin-top: 1rem;">
+                La región Áncash enfrenta importantes desafíos nutricionales y de salud pública, entre ellos la persistencia de anemia y desnutrición crónica infantil, el incremento de enfermedades no transmisibles relacionadas con la alimentación, así como brechas en educación alimentaria y acceso a servicios especializados de nutrición. Asimismo, los nutricionistas de la región enfrentan dificultades relacionadas con la limitada oferta laboral, el intrusismo profesional, las brechas de capacitación continua y el limitado posicionamiento institucional.
+            </p>
+        </div>
+
+        <div id="informacion" class="tab-content">
+            <h2 style="color: #4a1016; margin-bottom: 2rem; text-align: center; font-size: 1.8rem;">Identidad Institucional</h2>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 2rem;">
+                
+                <div style="flex: 1; min-width: 280px; background-color: #fff; padding: 2rem; border-radius: 10px; border: 1px solid #e0dacb; box-shadow: 0 4px 6px rgba(0,0,0,0.01);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid #f5f2eb; padding-bottom: 0.5rem;">
+                        <span style="font-size: 1.8rem; margin-right: 12px;">👁️</span>
+                        <h3 style="color: #4a1016; margin: 0; font-size: 1.4rem;">Visión</h3>
+                    </div>
+                    <p style="color: #444; line-height: 1.7; text-align: justify;">
+                        Ser un Consejo Regional fortalecido, participativo y referente técnico-científico en nutrición y salud pública en la región Áncash, reconocido por la defensa del ejercicio profesional del nutricionista, la promoción de la ética y la excelencia profesional, y el impulso de acciones innovadoras orientadas a mejorar la alimentación, la seguridad alimentaria y la calidad de vida de la población ancashina.
+                    </p>
+                </div>
+
+                <div style="flex: 1; min-width: 280px; background-color: #fff; padding: 2rem; border-radius: 10px; border: 1px solid #e0dacb; box-shadow: 0 4px 6px rgba(0,0,0,0.01);">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem; border-bottom: 2px solid #f5f2eb; padding-bottom: 0.5rem;">
+                        <span style="font-size: 1.8rem; margin-right: 12px;">🎯</span>
+                        <h3 style="color: #4a1016; margin: 0; font-size: 1.4rem;">Misión</h3>
+                    </div>
+                    <p style="color: #444; line-height: 1.7; text-align: justify;">
+                        Representar, promover y defender el ejercicio profesional del nutricionista en la región Áncash, velando por el cumplimiento ético, científico y legal de la profesión. Fortaleciendo el desarrollo institucional del Consejo Regional XIX Áncash mediante una gestión transparente, participativa y eficiente; impulsando la capacitación continua, la investigación, la proyección social y la articulación interinstitucional.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="catalogo" class="tab-content">
+            <h2 style="color: #4a1016; border-bottom: 2px solid #721c24; padding-bottom: 0.5rem; margin-bottom: 1rem;">Catálogo Visual del Personal</h2>
+            <p style="color: #555;">Miembros oficiales del Consejo Regional XIX Áncash.</p>
+            
+            <div class="grid-personal">
+                
+                <div class="tarjeta-personal">
+                    <img src="https://via.placeholder.com/240x240" alt="Foto del Personal">
+                    <div class="info-personal">
+                        <h3>Lic. Nombre Apellido</h3>
+                        <p class="cargo">Decano Regional</p>
+                        <p class="detalle">Consejo Directivo</p>
+                    </div>
+                </div>
+
+                <div class="tarjeta-personal">
+                    <img src="https://via.placeholder.com/240x240" alt="Foto del Personal">
+                    <div class="info-personal">
+                        <h3>Lic. Nombre Apellido</h3>
+                        <p class="cargo">Nutricionista Clínico</p>
+                        <p class="detalle">Área de Capacitación</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div id="documentos" class="tab-content">
+            <h2 style="color: #4a1016; border-bottom: 2px solid #721c24; padding-bottom: 0.5rem; margin-bottom: 1rem;">Biblioteca Digital</h2>
+            <p style="margin-bottom: 1.5rem; color: #555;">Consulte y descargue las normativas, guías y formatos oficiales del área de nutrición.</p>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th style="width: 55%;">DOCUMENTOS</th>
+                        <th style="width: 25%;">Categoría / Área</th>
+                        <th style="width: 20%; text-align: center;">Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr style="background-color: #fff;">
+                        <td style="font-weight: bold; color: #4a1016;">Guías alimentarias para niñas y niños menores de 2 años de edad</td>
+                        <td style="color: #555; font-weight: 600;">NUTRICIÓN</td>
+                        <td style="text-align: center;">
+                            <a href="Guías alimentarias para niñas y niños menores de 2 años de edad.pdf" target="_blank" class="btn-descarga">Ver / Descargar</a>
+                        </td>
+                    </tr>
+                    
+                    <tr style="background-color: #faf8f5;">
+                        <td style="font-weight: bold; color: #4a1016;">Guia de Estreñimiento en el niño</td>
+                        <td style="color: #555; font-weight: 600;">NUTRICIÓN</td>
+                        <td style="text-align: center;">
+                            <a href="Guia de Estreñimiento en el niño.pdf" target="_blank" class="btn-descarga">Ver / Descargar</a>
+                        </td>
+                    </tr>            
+                    
+                    <tr style="background-color: #fff;">
+                        <td style="font-weight: bold; color: #4a1016;">Dietoterapia, nutrición clínica y metabolismo - Daniel A De Luis Roman, Diego Bellido Guerrero, Pedro Pablo Garcia Luna</td>
+                        <td style="color: #555; font-weight: 600;">NUTRICIÓN</td>
+                        <td style="text-align: center;">
+                            <a href="Dietoterapia, nutrición clínica y metabolismo - Daniel A De Luis Roman, Diego Bellido Guerrero, Pedro Pablo Garcia Luna.pdf" target="_blank" class="btn-descarga">Ver / Descargar</a>
+                        </td>
+                    </tr>            
+                    
+                    <tr style="background-color: #faf8f5;">
+                        <td style="font-weight: bold; color: #4a1016;">GuiaAntropometricaAdulto</td>
+                        <td style="color: #555; font-weight: 600;">NUTRICIÓN</td>
+                        <td style="text-align: center;">
+                            <a href="GuiaAntropometricaAdulto.pdf" target="_blank" class="btn-descarga">Ver / Descargar</a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+
+            tablinks = document.getElementsByClassName("tab-btn");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+    </script>
+</body>
+</html>
