@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NUTRICIÓN</title>
+    <title>NUTRICIÓN - CRXIX ÁNCASH</title>
     <style>
-        /* Estilos Generales - Aspecto Limpio e Institucional */
+        /* Estilos Generales - Aspecto Limpio, Guinda e Institucional */
         * {
             box-sizing: border-box;
             margin: 0;
@@ -13,262 +13,70 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
-       body {
-    background-color: #f5f2eb; /* Color Beige/Crema del uniforme */
-    color: #222;
-    line-height: 1.6;
-}
-
-        header {
-    background-color: #005b94; /* Azulino oficial del uniforme */
-    color: white;
-    text-align: center;
-    padding: 2rem 1rem;
-}
-
-        header h1 {
-            font-size: 2rem;
-            margin-bottom: 0.5rem;
+        body {
+            background-color: #f5f2eb; /* Fondo Beige del uniforme */
+            color: #222;
+            line-height: 1.6;
         }
 
-        /* Sistema de Pestañas (Navegación) */
+        header {
+            background-color: #721c24; /* Color Guinda principal */
+            color: #f5f2eb; /* Texto en beige clarito */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        header img {
+            height: 90px; /* Tamaño del logo optimizado */
+            width: auto;
+            margin-right: 20px;
+            vertical-align: middle;
+            border-radius: 50%;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            border: 2px solid #f5f2eb; /* Borde beige sutil al logo */
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+
+        /* Sistema de Pestañas (Barra Guinda Oscuro) */
         nav {
-    background-color: #002244; /* Azul oscuro complementario */
-    display: flex;
-    justify-content: center;
-    position: sticky;
-    top: 0;
-}
+            background-color: #4a1016; /* Guinda más oscuro para contraste */
+            display: flex;
+            justify-content: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-nav button {
-    background: transparent;
-    border: none;
-    color: #b3d9ff; /* Celeste claro para las letras */
-    padding: 1rem 1.5rem;
-    font-size: 1rem;
-    cursor: pointer;
-    transition: 0.3s;
-    font-weight: bold;
-}
+        nav button {
+            background: transparent;
+            border: none;
+            color: #e3c4c6; /* Guinda clarito/pastel para letras inactivas */
+            padding: 1.2rem 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
 
-nav button:hover, nav button.active {
-    color: white;
-    background-color: #005b94; /* Resalta en azulino al hacer clic */
-}
+        nav button:hover, nav button.active {
+            color: #ffffff;
+            background-color: #721c24; /* Cambia al guinda encendido */
+            border-bottom: 3px solid #f5f2eb; /* Línea de acento beige */
+        }
 
         /* Contenedor de Secciones */
         .container {
             max-width: 1200px;
-            margin: 2rem auto;
-            padding: 0 1rem;
-        }
-
-        .tab-content {
-            display: none; /* Esconde las secciones por defecto */
-            background: white;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.05);
-        }
-
-        .tab-content.active {
-            display: block; /* Muestra solo la sección activa */
-        }
-
-        /* Diseño del Catálogo de Fotos (Grid Responsivo) */
-        .grid-personal {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-            gap: 2rem;
-            margin-top: 1.5rem;
-        }
-
-        .tarjeta-personal {
-    background: #fff;
-    border: 1px solid #e0dacb; /* Borde beige sutil */
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
-    transition: transform 0.2s;
-}
-
-        .tarjeta-personal:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-
-        .tarjeta-personal img {
-            width: 100%;
-            height: 220px;
-            object-fit: cover; /* Evita que la foto se deforme */
-            background-color: #eaeff1;
-        }
-
-        .info-personal {
-            padding: 1rem;
-        }
-
-        .info-personal h3 {
-            font-size: 1.1rem;
-            color: #004d40;
-            margin-bottom: 0.2rem;
-        }
-
-        .info-personal .cargo {
-            font-size: 0.9rem;
-            color: #00796b;
-            font-weight: 600;
-            text-transform: uppercase;
-        }
-
-        .info-personal .detalle {
-            font-size: 0.85rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
-
-        /* Estilos de listas de información */
-        ul {
-            list-style-position: inside;
-            margin-top: 1rem;
-            padding-left: 1rem;
-        }
-
-        li {
-            margin-bottom: 0.5rem;
-        }
-        header img {
-  height: 50px; /* Ajusta la altura del logo según tus preferencias */
-  width: auto; /* Mantiene la proporción */
-  margin-right: 40px; /* Espacio entre el logo y el texto */
-  vertical-align: middle; /* Alinea verticalmente con el texto */
-  border-radius: 50%; /* Opcional: hace el logo circular */
-  box-shadow: 0 3px 16px rgba(0, 0, 0, 0.8); /* Opcional: agrega una sombra sutil */
-}
-    </style>
-</head>
-<body>
-
-    <header>
-  <img src="logo.jpeg" alt="Logo Colegio Nutricionistas Ancash"> 
-  <h1>CRXIX - Colegio Nutricionista Ancash</h1>  
-</header>
-
-    <!-- Barra de Navegación (Pestañas) -->
-    <nav>
-        <button class="tab-btn active" onclick="openTab(event, 'inicio')">Inicio</button>
-        <button class="tab-btn" onclick="openTab(event, 'informacion')">Información General</button>
-        <button class="tab-btn" onclick="openTab(event, 'catalogo')">Catálogo de Personal</button>
-        <button class="tab-btn" onclick="openTab(event, 'documentos')">Biblioteca Digital</button> </nav>
-    <div class="container">
-        
-        <!-- PESTAÑA 1: INICIO -->
-        <div id="inicio" class="tab-content active">
-            <h2>INTRODUCCIÓN</h2>
-            <p style="margin-top: 1rem;">
-            El Consejo Regional XIX Áncash del Colegio de Nutricionistas del Perú, creado en el año 2024, representa un avance importante en el proceso de descentralización
-            institucional y fortalecimiento del ejercicio profesional del nutricionista en la región Áncash. Su creación responde a la necesidad de contar con una representación
-            regional organizada, participativa y cercana a los colegiados, capaz de impulsar acciones orientadas al fortalecimiento profesional, la defensa gremial y la promoción
-            de la salud y nutrición de la población.
-            La región Áncash enfrenta importantes desafíos nutricionales y de salud pública, entre ellos la persistencia de anemia y desnutrición crónica infantil, el incremento de enfermedades no transmisibles relacionadas con la alimentación, así como brechas en educación alimentaria y acceso a servicios especializados de nutrición. Asimismo, los nutricionistas de la región enfrentan dificultades relacionadas con la limitada oferta laboral, el intrusismo profesional, las brechas de capacitación continua y el limitado posicionamiento institucional..</p>
-       
-        </div>
-
-        <!-- PESTAÑA 2: INFORMACIÓN -->
-<div id="informacion" class="tab-content">
-            <h2 style="color: #003366; margin-bottom: 1.5rem; text-align: center;">Identidad Institucional</h2>
-            
-            <div style="display: flex; flex-wrap: wrap; gap: 2rem; margin-top: 1rem;">
-                
-                <div style="flex: 1; min-width: 280px; background-color: #fff; padding: 1.5rem; border-radius: 8px; border: 1px solid #e0dacb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
-                        <span style="font-size: 1.5rem; margin-right: 10px;">👁️</span>
-                        <h3 style="color: #003366; margin: 0; font-size: 1.3rem;">Visión</h3>
-                    </div>
-                    <p style="color: #444; line-height: 1.6; text-align: justify;">
-                        Ser un Consejo Regional fortalecido, participativo y referente técnico-científico en nutrición y salud pública en la región Áncash, reconocido por la defensa del ejercicio profesional del nutricionista, la promoción de la ética y la excelencia profesional, y el impulso de acciones innovadoras orientadas a mejorar la alimentación, la seguridad alimentaria y la calidad de vida de la población ancashina.
-                    </p>
-                </div>
-
-                <div style="flex: 1; min-width: 280px; background-color: #fff; padding: 1.5rem; border-radius: 8px; border: 1px solid #e0dacb; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
-                    <div style="display: flex; align-items: center; margin-bottom: 0.8rem;">
-                        <span style="font-size: 1.5rem; margin-right: 10px;">🎯</span>
-                        <h3 style="color: #003366; margin: 0; font-size: 1.3rem;">Misión</h3>
-                    </div>
-                    <p style="color: #444; line-height: 1.6; text-align: justify;">
-                        Representar, promover y defender el ejercicio profesional del nutricionista en la región Áncash, velando por el cumplimiento ético, científico y legal de la profesión. Fortaleciendo el desarrollo institucional del Consejo Regional XIX Áncash mediante una gestión transparente, participativa y eficiente; impulsando la capacitación continua, la investigación, la proyección social y la articulación interinstitucional.
-                    </p>
-                </div>
-
-            </div>
-        </div>
-<div id="documentos" class="tab-content">
-            <h2>Repositorio de Documentos Técnicos</h2>
-            <p style="margin-bottom: 1.5rem;">Consulte y descargue las normativas, guías y formatos oficiales del área de nutrición.</p>
-            
-            <table style="width: 100%; border-collapse: collapse; margin-top: 1rem; text-align: left;">
-                <thead>
-                    <tr style="background-color: #003366; color: white;">
-                        <th style="padding: 12px; border: 1px solid #e0dacb;">DOCUMENTOS</th>
-                        <th style="padding: 12px; border: 1px solid #e0dacb;">Categoría / Área</th>
-                        <th style="padding: 12px; border: 1px solid #e0dacb; text-align: center;">Acción</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr style="background-color: #fff; border-bottom: 1px solid #e0dacb;">
-                        <td style="padding: 12px; font-weight: bold; color: #003366;">Guías alimentarias para niñas y niños menores de 2 años de edad</td>
-                        <td style="padding: 12px; color: #555;">NUTRICIÓN</td>
-                        <td style="padding: 12px; text-align: center;">
-                            <a href="Guías alimentarias para niñas y niños menores de 2 años de edad.pdf" target="_blank" style="background-color: #005b94; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">Ver / Descargar</a>
-                        </td>
-                    </tr>
-                    
-                    <tr style="background-color: #fff; border-bottom: 1px solid #e0dacb;">
-                        <td style="padding: 12px; font-weight: bold; color: #003366;">Guia de Estreñimiento en el niño</td>
-                        <td style="padding: 12px; color: #555;">NUTRICIÓN</td>
-                        <td style="padding: 12px; text-align: center;">
-                            <a href="Guia de Estreñimiento en el niño.pdf" target="_blank" style="background-color: #005b94; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">Ver / Descargar</a>
-                    </td>
-                    </tr>            
-                   <tr style="background-color: #fff; border-bottom: 1px solid #e0dacb;">
-                        <td style="padding: 12px; font-weight: bold; color: #003366;">Dietoterapia, nutrición clínica y metabolismo - Daniel A De Luis Roman, Diego Bellido Guerrero, Pedro Pablo Garcia Luna</td>
-                        <td style="padding: 12px; color: #555;">NUTRICIÓN</td>
-                        <td style="padding: 12px; text-align: center;">
-                            <a href="Dietoterapia, nutrición clínica y metabolismo - Daniel A De Luis Roman, Diego Bellido Guerrero, Pedro Pablo Garcia Luna.pdf" target="_blank" style="background-color: #005b94; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">Ver / Descargar</a>
-                    </td>
-                    </tr>            
-                    
-                    <tr style="background-color: #fff; border-bottom: 1px solid #e0dacb;">
-                        <td style="padding: 12px; font-weight: bold; color: #003366;">GuiaAntropometricaAdulto</td>
-                        <td style="padding: 12px; color: #555;">NUTRICIÓN</td>
-                        <td style="padding: 12px; text-align: center;">
-                            <a href="GuiaAntropometricaAdulto.pdf" style="background-color: #005b94; color: white; padding: 6px 12px; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.9rem;">Ver / Descargar</a>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    <!-- Script en JavaScript para alternar entre pestañas sin recargar la página -->
-    <script>
-        function openTab(evt, tabName) {
-            // Esconder todas las secciones
-            var i, tabcontent, tablinks;
-            tabcontent = document.getElementsByClassName("tab-content");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
-            }
-
-            // Quitar la clase "active" de todos los botones
-            tablinks = document.getElementsByClassName("tab-btn");
-            for (i = 0; i < tablinks.length; i++) {
-                tablinks[i].className = tablinks[i].className.replace(" active", "");
-            }
-
-            // Mostrar la sección actual y añadir clase "active" al botón presionado
-            document.getElementById(tabName).style.display = "block";
-            evt.currentTarget.className += " active";
-        }
-    </script>
-</body>
-</html>
+            margin: 2.5rem auto;
+            padding: 0 1
