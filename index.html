@@ -16,13 +16,17 @@
         body {
             background-color: #f5f2eb; /* Fondo Beige base */
             
-            /* Configuración para la marca de agua con logos separados */
-            background-image: linear-gradient(rgba(245, 242, 235, 0.94), rgba(245, 242, 235, 0.94)), url('logo.jpeg');
-            background-size: 330px; /* Logos un poco más grandes para que no saturen */
-            background-position: center; /* Centra el patrón inicial */
-            /*background-repeat: repeat; /* Hace que se repitan por toda la web */
-            background-attachment: fixed; /* Mantiene los logos quietos al bajar en la página */
-            
+            /* TRUCO MAESTRO: Dos capas del logo desfasadas para que queden intercaladas */
+            background-image: 
+                linear-gradient(rgba(245, 242, 235, 0.94), rgba(245, 242, 235, 0.94)), /* Capa de transparencia */
+                url('logo.jpeg'), /* Capa 1 de logos */
+                url('logo.jpeg'); /* Capa 2 de logos (se moverá para intercalar) */            
+            /* Definimos un tamaño de celda de fondo grande (ej. 400px) para que respiren bastante */
+            background-size: auto, 240px 240px, 240px 240px;             
+            /* Movemos la segunda capa exactamente a la mitad de la celda (200px) para romper la cuadrícula */
+            background-position: 0 0, 0 0, 200px 200px;             
+            background-repeat: no-repeat, repeat, repeat;
+            background-attachment: fixed; /* Mantiene los logos quietos al hacer scroll */            
             color: #222;
             line-height: 1.6;
         }
