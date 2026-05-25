@@ -14,19 +14,22 @@
         }
 
         body {
-            background-color: #f5f2eb; /* Fondo Beige base */
-            
-            /* TRUCO MAESTRO: Dos capas del logo desfasadas para que queden intercaladas */
+            background-color: #f5f2eb; /* Fondo Beige base uniforme */            
+            /* TRUCO PROFESIONAL: Cargamos los logos con posiciones fijas en la pantalla para romper la cuadrícula */
             background-image: 
-                linear-gradient(rgba(245, 242, 235, 0.94), rgba(245, 242, 235, 0.94)), /* Capa de transparencia */
-                url('logo.jpeg'), /* Capa 1 de logos */
-                url('logo.jpeg'); /* Capa 2 de logos (se moverá para intercalar) */            
-            /* Definimos un tamaño de celda de fondo grande (ej. 400px) para que respiren bastante */
-            background-size: auto, 240px 240px, 240px 240px;             
-            /* Movemos la segunda capa exactamente a la mitad de la celda (200px) para romper la cuadrícula */
-            background-position: 0 0, 0 0, 200px 200px;             
-            background-repeat: no-repeat, repeat, repeat;
-            background-attachment: fixed; /* Mantiene los logos quietos al hacer scroll */            
+                linear-gradient(rgba(245, 242, 235, 0.95), rgba(245, 242, 235, 0.95)), /* Capa protectora de texto */
+                url('logo.jpeg'),
+                url('logo.jpeg'),
+                url('logo.jpeg'),
+                url('logo.jpeg');            
+            /* Controlamos el tamaño de cada logo flotante */
+            background-size: auto, 180px 180px, 180px 180px, 180px 180px, 180px 180px;            
+            /* Ubicamos los logos esparcidos estratégicamente en las esquinas y centros */
+            background-position: center, 10% 20%, 85% 40%, 15% 75%, 80% 85%;            
+            /* IMPORTANTE: Evitamos que se repitan en cuadrícula */
+            background-repeat: no-repeat;            
+            /* Se quedan flotando elegantemente detrás del texto al bajar la web */
+            background-attachment: fixed;            
             color: #222;
             line-height: 1.6;
         }
