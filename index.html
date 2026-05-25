@@ -15,10 +15,14 @@
 
         body {
             background-color: #f5f2eb; /* Fondo Beige base */
-            /* Aquí añadimos el logo como marca de agua de fondo */
+            
+            /* Configuración para la marca de agua con logos separados */
             background-image: linear-gradient(rgba(245, 242, 235, 0.94), rgba(245, 242, 235, 0.94)), url('logo.jpeg');
-            background-size: 200px; /* Controla el tamaño de cada logo en el fondo */
-            background-attachment: fixed; /* El fondo se queda quieto al hacer scroll */
+            background-size: 280px; /* Logos un poco más grandes para que no saturen */
+            background-position: center; /* Centra el patrón inicial */
+            background-repeat: repeat; /* Hace que se repitan por toda la web */
+            background-attachment: fixed; /* Mantiene los logos quietos al bajar en la página */
+            
             color: #222;
             line-height: 1.6;
         }
