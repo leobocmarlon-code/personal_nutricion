@@ -110,6 +110,81 @@
             display: block; /* Muestra solo la sección activa */
         }
 
+        /* === NUEVOS ESTILOS PARA EL CARRUSEL DE NOVEDADES === */
+        .carrusel-container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto 2.5rem auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+
+        .carrusel-track {
+            display: flex;
+            width: 100%;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carrusel-slide {
+            min-width: 100%;
+            position: relative;
+            height: 400px; /* Puedes ajustar la altura del carrusel aquí */
+        }
+
+        .carrusel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carrusel-caption {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(74, 16, 22, 0.95)); /* Degradado guinda transparente */
+            color: #f5f2eb;
+            padding: 2rem 1.5rem 1.5rem 1.5rem;
+            text-align: left;
+        }
+
+        .carrusel-caption h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #ffffff;
+        }
+
+        .carrusel-caption p {
+            font-size: 1rem;
+            color: #e3c4c6;
+        }
+
+        /* Botones de navegación (Opcionales por si el usuario quiere pasarlas manualmente) */
+        .carrusel-btn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(114, 28, 36, 0.7);
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            font-size: 1.2rem;
+            border-radius: 50%;
+            transition: 0.3s;
+            z-index: 10;
+        }
+
+        .carrusel-btn:hover {
+            background: rgba(74, 16, 22, 0.9);
+        }
+
+        .carrusel-btn.prev { left: 15px; }
+        .carrusel-btn.next { right: 15px; }
+        /* =================================================== */
+
         /* Diseño del Catálogo de Fotos (Grid Responsivo) */
         .grid-personal {
             display: grid;
@@ -227,9 +302,40 @@
     <div class="container">
         
         <div id="inicio" class="tab-content active">
+            
+            <div class="carrusel-container">
+                <button class="carrusel-btn prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carrusel-btn next" onclick="moveSlide(1)">&#10095;</button>
+                
+                <div class="carrusel-track" id="track">
+                    
+                    <div class="carrusel-slide">
+                        <img src="imagen1.jpg" alt="Novedad 1"> <div class="carrusel-caption">
+                            <h3>Próxima Campaña de Salud Nutricional</h3>
+                            <p>Participa este fin de semana en nuestra jornada gratuita de descarte de anemia.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carrusel-slide">
+                        <img src="imagen2.jpg" alt="Novedad 2"> <div class="carrusel-caption">
+                            <h3>Conferencia: Avances en Dietoterapia 2026</h3>
+                            <p>Inscripciones abiertas para colegiados y estudiantes del sector salud.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="carrusel-slide">
+                        <img src="imagen3.jpg" alt="Novedad 3"> <div class="carrusel-caption">
+                            <h3>Nueva Biblioteca Digital Disponible</h3>
+                            <p>Ya puedes consultar y descargar las guías alimentarias oficiales desde la pestaña documentos.</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+
             <h2 style="color: #4a1016; border-bottom: 2px solid #721c24; padding-bottom: 0.5rem; margin-bottom: 1rem;">INTRODUCCIÓN</h2>
             <p style="text-align: justify; color: #333; font-size: 1.05rem;">
-                COLEGIO NUTRICIONISTAS DEL PERÚ, creado en el año 2024, representa un avance importante en el proceso de descentralización institucional y fortalecimiento del ejercicio profesional del nutricionista en la región Áncash. Su creación responde a la necesidad de contar con una representación regional organizada, participativa y cercana a los colegiados, capaz de impulsar acciones orientadas al fortalecimiento profesional, la defensa gremial y la promoción de la salud y nutrición de la población.
+                COLEGIO NUTRICIONISTAS DEL PERÚ, creado en el año 2024, representa un avance importante en el proceso de descentralización institucional y fortalecimiento del ejercicio profesional del nutricionista en la región Áncash. Su creación responde a la necesidad de contar con una representación regional organizada, participativa y cercana a los colegiados, capaz de impulsar acciones orientadas al fortalecimiento profesional, la defense gremial y la promoción de la salud y nutrición de la población.
             </p>
             <p style="text-align: justify; color: #333; font-size: 1.05rem; margin-top: 1rem;">
                 La región Áncash enfrenta importantes desafíos nutricionales y de salud pública, entre ellos la persistencia de anemia y desnutrición crónica infantil, el incremento de enfermedades no transmisibles relacionadas con la alimentación, así como brechas en educación alimentaria y acceso a servicios especializados de nutrición. Asimismo, los nutricionistas de la región enfrentan dificultades relacionadas con la limitada oferta laboral, el intrusismo profesional, las brechas de capacitación continua y el limitado posicionamiento institucional.
@@ -268,7 +374,7 @@
             <h2 style="color: #4a1016; border-bottom: 2px solid #721c24; padding-bottom: 0.5rem; margin-bottom: 1rem;">CREACIÓN</h2>
             <p style="color: #555;">       LA RESOLUCIÓN DE CONSEJO NACIONAL N°250-2024-CN-CNP, DE FECHA 18 DE MAYO DE 2024, </p> 
             <p style="color: #555;">       QUE APRUEBA LA ENTRADA EN FUNCIONAMIENTO DEL CONSEJO REGIONAL XIX
-            Áncash.</p>           
+                Áncash.</p>            
             
         </div>
 
@@ -323,6 +429,7 @@
     </div>
 
     <script>
+        // Lógica de Pestañas existente
         function openTab(evt, tabName) {
             var i, tabcontent, tablinks;
             tabcontent = document.getElementsByClassName("tab-content");
@@ -338,6 +445,40 @@
             document.getElementById(tabName).style.display = "block";
             evt.currentTarget.className += " active";
         }
+
+        // LÓGICA DE CONTROL DEL CARRUSEL (AUTOMÁTICO Y MANUAL)
+        let currentIndex = 0;
+        const track = document.getElementById('track');
+        const slides = document.querySelectorAll('.carrusel-slide');
+        const totalSlides = slides.length;
+
+        function updateSlidePosition() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        function moveSlide(direction) {
+            currentIndex += direction;
+            
+            if (currentIndex >= totalSlides) {
+                currentIndex = 0; // Regresa al inicio
+            } else if (currentIndex < 0) {
+                currentIndex = totalSlides - 1; // Va al final
+            }
+            updateSlidePosition();
+        }
+
+        // Configuración para que cambie automáticamente cada 4 segundos (4000ms)
+        let autoSlideInterval = setInterval(() => {
+            moveSlide(1);
+        }, 4000);
+
+        // Detener el auto-cambio si el usuario hace clic manualmente en las flechas para mejorar experiencia
+        document.querySelectorAll('.carrusel-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                clearInterval(autoSlideInterval);
+                autoSlideInterval = setInterval(() => { moveSlide(1); }, 4000);
+            });
+        });
     </script>
 </body>
 </html>
